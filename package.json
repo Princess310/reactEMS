@@ -54,6 +54,8 @@
     "url-loader": "latest",
     "webpack": "latest",
     "webpack-dev-server": "latest",
-    "whatwg-fetch": "latest"
+    "whatwg-fetch": "latest",
+    "browser-sync": "latest",
+    "browser-sync-webpack-plugin": "latest"
   }
 }

@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV;
 
@@ -13,7 +14,7 @@ let config = {
         bundle: path.resolve(__dirname, 'app/app.js')
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'www'),
         filename: '[name].js'
     },
     module: {
@@ -69,8 +70,10 @@ if (NODE_ENV === 'production') {
 
 if (NODE_ENV === 'development') {
     config.plugins.push(
-        new OpenBrowserPlugin({
-            url: 'http://localhost:8080'
+        new BrowserSyncPlugin({
+            host: 'localhost',
+            port: 3000,
+            server: { baseDir: ['./www'] }
         })
     );
 }

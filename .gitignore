@@ -3,6 +3,7 @@ node_modules
 
 # Bundle
 dist
+www
 
 # npm debug log
 npm-debug.log
